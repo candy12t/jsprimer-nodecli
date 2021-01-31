@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/candy12t/jsprimer-nodecli/issues"
   },
-  "homepage": "https://github.com/candy12t/jsprimer-nodecli#readme"
+  "homepage": "https://github.com/candy12t/jsprimer-nodecli#readme",
+  "dependencies": {
+    "commander": "^5.0.0"
+  }
 }
