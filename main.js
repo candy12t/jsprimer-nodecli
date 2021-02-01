@@ -3,8 +3,15 @@ const fs = require("fs");
 const marked = require("marked");
 
 
+program.option("--gfm", "GFMを有効にする");
 program.parse(process.argv);
 const filePath = program.args[0];
+
+
+const cliOptions = {
+  gfm: false,
+  ...program.opts(),
+};
 
 
 fs.readFile(filePath, 'utf8', (err, file) => {
@@ -13,6 +20,8 @@ fs.readFile(filePath, 'utf8', (err, file) => {
     process.exit(1);
     return;
   }
-  const html = marked(file);
+  const html = marked(file, {
+    gfm: cliOptions.gfm,
+  });
   console.log(html);
 });
